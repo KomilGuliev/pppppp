@@ -6,7 +6,7 @@
 #    By: kolya <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/05 16:43:24 by kolya             #+#    #+#              #
-#    Updated: 2019/09/05 16:50:45 by kolya            ###   ########.fr        #
+#    Updated: 2019/09/07 10:35:46 by kolya            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,12 @@ FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): gcc $(FLAGS) -c $(SRC) -I $(INCLUDES)
+$(NAME): 
+		gcc $(FLAGS) -c $(SRC) -I $(INCLUDES)
 		ar rc $(NAME) $(OBJ)
 		ranlib $(NAME)
-clean: rm -rf $(OBJ)
+clean: 
+	rm -rf $(OBJ)
 
 fclean: clean
 		rm -rf $(NAME)

@@ -6,7 +6,7 @@
 /*   By: kolya <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 17:00:48 by kolya             #+#    #+#             */
-/*   Updated: 2019/09/06 18:31:07 by dcapers          ###   ########.fr       */
+/*   Updated: 2019/09/07 10:45:48 by kolya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,18 @@ void	ft_putstr(char *str)
 
 void	readfile(char *filename)
 {
-	char	buff[1024];
+	char	buff[1025];
 	int		ret;
 	int		file;
 
 	file = open(filename, O_RDONLY);
+	if (file == -1)
+		return ;
 	if (file > 0)
 	{
 		while ((ret = read(file, buff, 1024)))
 		{
-			buff[ret + 1] = '\0';
+			buff[ret] = '\0';
 			ft_putstr(buff);
 		}
 	}

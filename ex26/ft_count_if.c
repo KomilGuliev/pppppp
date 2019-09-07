@@ -6,7 +6,7 @@
 /*   By: kolya <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 16:54:06 by kolya             #+#    #+#             */
-/*   Updated: 2019/09/05 16:55:50 by kolya            ###   ########.fr       */
+/*   Updated: 2019/09/07 10:39:35 by kolya            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int		ft_count_if(char **tab, int (*f)(char *))
 	int		count;
 
 	count = 0;
-	while (tab)
+	while (*tab)
 	{
 		if (f(*tab) == 1)
 			count++;
